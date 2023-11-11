@@ -17,7 +17,7 @@ void handle_per(va_list ap, char *buffer)
 	buffer_index = strlen(buffer) - 1;
 
 	/*Expand buffer memory to accept percent*/
-	buffer = realloc(buffer, sizeof(buffer) + sizeof(char));
+	buffer = realloc(buffer, strlen(buffer) + sizeof(char) + 1);
 	/*Add percent to buffer*/
 	buffer[buffer_index] = '%';
 }

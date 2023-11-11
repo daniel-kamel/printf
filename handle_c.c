@@ -20,7 +20,7 @@ void handle_c(va_list ap, char *buffer)
 	insert_c = va_arg(ap, char);
 
 	/*Expand buffer memory to accept character*/
-	buffer = realloc(buffer, sizeof(buffer) + sizeof(char));
+	buffer = realloc(buffer, strlen(buffer) + sizeof(char) + 1);
 	/*Add character to buffer*/
 	buffer[buffer_index] = insert_c;
 }
