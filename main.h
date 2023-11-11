@@ -25,5 +25,6 @@ typedef struct specifier
 
 /*Function prototypes*/
 void handle_c(va_list ap, char *buffer);
+void handle_s(va_list ap, char *buffer);
 
 #endif
