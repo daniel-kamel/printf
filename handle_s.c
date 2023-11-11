@@ -9,15 +9,14 @@
 void handle_s(va_list ap, char *buffer)
 {
 	char *str;
-	int i;
 
 	if (!buffer)
 		exit(-1);
 
 	str = va_arg(ap, char *);
 	
-	buffer = realloc(buffer, (strlen(buffer) + strlen(str)));
+	buffer = realloc(buffer, (strlen(buffer) + strlen(str)) * sizeof(char) - 2);
 
-	for (i = 0; str[i]; i++)
-		buffer[strlen(buffer) - 1] = str[i];
+	strcat(buffer, str);
+	printf("length: %lu\n", strlen(buffer));
 }

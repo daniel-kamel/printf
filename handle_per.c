@@ -6,7 +6,7 @@
  * @buffer: buffer string to save percent sign to
  * Return: void
 */
-void handle_per(va_list ap, char *buffer)
+void handle_per(char *buffer)
 {
 	int buffer_index;
 
@@ -14,10 +14,10 @@ void handle_per(va_list ap, char *buffer)
 		exit(-1);
 
 	/*Get current buffer index*/
-	buffer_index = strlen(buffer) - 1;
+	buffer_index = strlen(buffer);
 
 	/*Expand buffer memory to accept percent*/
-	buffer = realloc(buffer, strlen(buffer) + sizeof(char) + 1);
+	buffer = realloc(buffer, strlen(buffer) + sizeof(char) - 2);
 	/*Add percent to buffer*/
 	buffer[buffer_index] = '%';
 }

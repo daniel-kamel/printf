@@ -15,12 +15,12 @@ void handle_c(va_list ap, char *buffer)
 		exit(-1);
 
 	/*Get current buffer index*/
-	buffer_index = strlen(buffer) - 1;
+	buffer_index = strlen(buffer);
 	/*Get character to be inserted*/
-	insert_c = va_arg(ap, char);
+	insert_c = va_arg(ap, int);
 
 	/*Expand buffer memory to accept character*/
-	buffer = realloc(buffer, strlen(buffer) + sizeof(char) + 1);
+	buffer = realloc(buffer, strlen(buffer) + sizeof(char) - 2);
 	/*Add character to buffer*/
 	buffer[buffer_index] = insert_c;
 }
