@@ -6,6 +6,7 @@
 /*Helper files to include*/
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 /**
@@ -18,9 +19,11 @@
 */
 typedef struct specifier
 {
-    char c;
-    void (*func)(va_list ap, char *buffer);
+	char c;
+	void (*func)(va_list ap, char *buffer);
 };
 
+/*Function prototypes*/
+void handle_c(va_list ap, char *buffer);
 
 #endif
