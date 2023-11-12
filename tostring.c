@@ -8,7 +8,7 @@
  */
 void tostring(char str[], int num)
 {
-	int i, rem, len = 0, n;
+	int i, rem, len = 0, n, flag = 1;
 
 	n = num;
 	while (n != 0)
@@ -16,11 +16,19 @@ void tostring(char str[], int num)
 		len++;
 		n /= 10;
 	}
-	for (i = 0; i < len; i++)
+	if (num < 0)
 	{
-		rem = num % 10;
-		num = num / 10;
-		str[len - (i + 1)] = rem + '0';
+		str[0] = '-';
+		num = -num;
+		flag = 0;
 	}
-	str[len] = '\0';
+
+	for (i = 0; i < len; i++)
+		{
+			rem = num % 10;
+			num = num / 10;
+			str[len - (i + flag)] = rem + '0';
+		}
+
+	str[strlen(str)] = '\0';
 }
