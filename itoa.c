@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include "main.h"
 
 /**
  * reverse - a utility function to reverse a string
@@ -32,27 +33,28 @@ void reverse(char str[], int length)
 char *itoa(int num, char *str, int base)
 {
 	int i = 0;
+	long l_num = num;
 	bool isNegative = false;
 
-	if (num == 0)
+	if (l_num == 0)
 	{
 		str[i++] = '0';
 		str[i] = '\0';
 		return (str);
 	}
 
-	if (num < 0 && base == 10)
+	if (l_num < 0 && base == 10)
 	{
 		isNegative = true;
-		num = -num;
+		l_num = -l_num;
 	}
 
-	while (num != 0)
+	while (l_num != 0)
 	{
-		int rem = num % base;
+		int rem = l_num % base;
 
 		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-		num = num / base;
+		l_num = l_num / base;
 	}
 
 	if (isNegative)

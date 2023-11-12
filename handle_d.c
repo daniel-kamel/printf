@@ -7,7 +7,7 @@
  */
 int handle_d(va_list ap)
 {
-	char string[10];
+	char string[11];
 	int num;
 	int i;
 
