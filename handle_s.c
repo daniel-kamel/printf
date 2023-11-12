@@ -12,6 +12,10 @@ int handle_s(va_list ap)
 
 	str = va_arg(ap, char *);
 
+	if (!str)
+	{
+		str = "(null)";
+	}
 	for (i = 0; str[i]; i++)
 		_putchar(str[i]);
 	return (i);
