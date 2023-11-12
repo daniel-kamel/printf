@@ -9,8 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, length = 0;
 	va_list ap;
-	spec sp[NUM_SPEC] = 
-	{
+	spec sp[NUM_SPEC] = {
 		{'c', handle_c},
 		{'s', handle_s},
 	};
@@ -44,5 +43,5 @@ int _printf(const char *format, ...)
 
 	va_end(ap);
 
-	return length;
+	return (length);
 }

@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * handle_c -	handles character specifier in _printf
- * Return:	1
+ * handle_c - handles character specifier in _printf
+ * @ap: variable list
+ * Return: 1
 */
 int handle_c(va_list ap)
 {
@@ -12,5 +13,5 @@ int handle_c(va_list ap)
 	insert_c = va_arg(ap, int);
 
 	/*print character*/
-	return(_putchar(insert_c));
+	return (_putchar(insert_c));
 }
