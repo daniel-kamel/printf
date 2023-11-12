@@ -31,6 +31,7 @@ int handle_d(va_list ap);
 int _printf(const char *format, ...);
 int _putchar(char c);
 void tostring(char str[], int num);
+char * itoa(int num, char *str, int base);
 
 #define NUM_SPEC 3
 
