@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			{
 				if (sp[j].c == format[i])
 				{
-					sp[j].func(ap, length);
+					length += sp[j].func(ap, length);
 					break;
 				}
 			}
