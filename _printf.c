@@ -13,12 +13,9 @@ int _printf(const char *format, ...)
 		{'c', handle_c},
 		{'s', handle_s},
 	};
-
 	if (!format)
 		return (-1);
-
 	va_start(ap, format);
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -38,11 +35,8 @@ int _printf(const char *format, ...)
 						length += sp[j].func(ap);
 						break;
 					}
-
 					if (j == NUM_SPEC - 1)
-					{
 						exit(1);
-					}
 				}
 			}
 		}
