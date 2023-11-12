@@ -21,15 +21,16 @@
 typedef struct specifier
 {
 	char c;
-	void (*func)(va_list ap, char *buffer);
+	int (*func)(va_list ap, int length);
 }spec;
 
 /*Function prototypes*/
-void handle_c(va_list ap, char *buffer);
-void handle_per(char *buffer);
-void handle_s(va_list ap, char *buffer);
+int handle_c(va_list ap, int length);
+int handle_per(int length);
+int handle_s(va_list ap, int length);
 int _printf(const char *format, ...);
+int _putchar(char c);
 
-#define NUM_SPEC 2
+#define NUM_SPEC 3
 
 #endif

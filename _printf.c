@@ -7,13 +7,13 @@
 */
 int _printf(const char *format, ...)
 {
-	int i, j, length;
-	char *buffer;
+	int i, j, length = 0;
 	va_list ap;
 	spec sp[NUM_SPEC] = 
 	{
 		{'c', handle_c},
 		{'s', handle_s},
+		{'%', handle_per}
 	};
 
 	if (!format)
@@ -21,39 +21,26 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
-	buffer = malloc(strlen(format) * sizeof(char));
-
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-			buffer[strlen(buffer)] = format[i];
+			length += _putchar(format[i]);
 		else
 		{
 			i++;
 
-			if (format[i] == '%')
-				handle_per(buffer);
-			else
+			for (j = 0; j < NUM_SPEC; j++)
 			{
-				for (j = 0; j < NUM_SPEC; j++)
+				if (sp[j].c == format[i])
 				{
-					if (sp[j].c == format[i])
-					{
-						sp[j].func(ap, buffer);
-						break;
-					}
+					sp[j].func(ap, length);
+					break;
 				}
 			}
 		}
 	}
-	length = strlen(buffer);
-	buffer[length] = '\0';
 
-/*	write(1, buffer, length);
-*/
-	printf("%s", buffer);	
 	va_end(ap);
-	free(buffer);
 
 	return length;
 }
