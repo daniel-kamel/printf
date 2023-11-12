@@ -56,8 +56,11 @@ char *itoa(int num, char *str, int base)
 	}
 
 	if (isNegative)
+	{
 		str[i++] = '-';
-		str[i] = '\0';
+	}
+	str[i] = '\0';
+
 
 	reverse(str, i);
 
