@@ -4,7 +4,7 @@
  * handle_s -		assign string into buffer.
  * Return:		nothing.
  */
-void handle_s(va_list ap)
+int handle_s(va_list ap)
 {
 	char *str;
 	int i;

@@ -13,7 +13,6 @@ int _printf(const char *format, ...)
 	{
 		{'c', handle_c},
 		{'s', handle_s},
-		{'%', handle_per}
 	};
 
 	if (!format)
@@ -29,11 +28,14 @@ int _printf(const char *format, ...)
 		{
 			i++;
 
+			if (format[i] == '%')
+				length += _putchar('%');
+
 			for (j = 0; j < NUM_SPEC; j++)
 			{
 				if (sp[j].c == format[i])
 				{
-					length += sp[j].func(ap, length);
+					length += sp[j].func(ap);
 					break;
 				}
 			}

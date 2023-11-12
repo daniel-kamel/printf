@@ -21,13 +21,12 @@
 typedef struct specifier
 {
 	char c;
-	int (*func)(va_list ap, int length);
+	int (*func)(va_list ap);
 }spec;
 
 /*Function prototypes*/
-int handle_c(va_list ap, int length);
-int handle_per(int length);
-int handle_s(va_list ap, int length);
+int handle_c(va_list ap);
+int handle_s(va_list ap);
 int _printf(const char *format, ...);
 int _putchar(char c);
 
