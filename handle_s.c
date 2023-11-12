@@ -15,7 +15,7 @@ void handle_s(va_list ap, char *buffer)
 
 	str = va_arg(ap, char *);
 	
-	buffer = realloc(buffer, (strlen(buffer) + strlen(str)) * sizeof(char) - 2);
+	buffer = realloc(buffer, (strlen(buffer) + strlen(str)) * sizeof(char));
 
 	strcat(buffer, str);
 	printf("length: %lu\n", strlen(buffer));

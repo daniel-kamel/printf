@@ -49,8 +49,9 @@ int _printf(const char *format, ...)
 	length = strlen(buffer);
 	buffer[length] = '\0';
 
-	write(1, buffer, length);
-	
+/*	write(1, buffer, length);
+*/
+	printf("%s", buffer);	
 	va_end(ap);
 	free(buffer);
 
