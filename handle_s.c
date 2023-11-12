@@ -2,21 +2,16 @@
 
 /**
  * handle_s -		assign string into buffer.
- * @ap:			va_list that has the arguments of printf.
- * @buffer:		buffer in which to save the final output.
  * Return:		nothing.
  */
-void handle_s(va_list ap, char *buffer)
+void handle_s(va_list ap)
 {
 	char *str;
-
-	if (!buffer)
-		exit(-1);
+	int i;
 
 	str = va_arg(ap, char *);
 	
-	buffer = realloc(buffer, (strlen(buffer) + strlen(str)) * sizeof(char));
-
-	strcat(buffer, str);
-	printf("length: %lu\n", strlen(buffer));
+	for (i = 0; str[i]; i++)
+		_putchar(str[i]);
+	return (i);
 }
