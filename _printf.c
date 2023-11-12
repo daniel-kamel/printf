@@ -29,13 +29,20 @@ int _printf(const char *format, ...)
 
 			if (format[i] == '%')
 				length += _putchar('%');
-
-			for (j = 0; j < NUM_SPEC; j++)
+			else
 			{
-				if (sp[j].c == format[i])
+				for (j = 0; j < NUM_SPEC; j++)
 				{
-					length += sp[j].func(ap);
-					break;
+					if (sp[j].c == format[i])
+					{
+						length += sp[j].func(ap);
+						break;
+					}
+
+					if (j == NUM_SPEC - 1)
+					{
+						exit(1);
+					}
 				}
 			}
 		}

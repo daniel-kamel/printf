@@ -22,7 +22,7 @@ typedef struct specifier
 {
 	char c;
 	int (*func)(va_list ap);
-}spec;
+} spec;
 
 /*Function prototypes*/
 int handle_c(va_list ap);
@@ -30,6 +30,6 @@ int handle_s(va_list ap);
 int _printf(const char *format, ...);
 int _putchar(char c);
 
-#define NUM_SPEC 3
+#define NUM_SPEC 2
 
 #endif
