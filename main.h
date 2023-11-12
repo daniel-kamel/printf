@@ -27,9 +27,11 @@ typedef struct specifier
 /*Function prototypes*/
 int handle_c(va_list ap);
 int handle_s(va_list ap);
+int handle_d(va_list ap);
 int _printf(const char *format, ...);
 int _putchar(char c);
+void tostring(char str[], int num);
 
-#define NUM_SPEC 2
+#define NUM_SPEC 3
 
 #endif

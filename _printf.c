@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 	spec sp[NUM_SPEC] = {
 		{'c', handle_c},
 		{'s', handle_s},
+		{'d', handle_d}
 	};
 	if (!format)
 		return (-1);
