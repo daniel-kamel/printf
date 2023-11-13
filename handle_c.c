@@ -12,6 +12,9 @@ int handle_c(va_list ap)
 	/*Get character to be inserted*/
 	insert_c = va_arg(ap, int);
 
+	if(!insert_c || insert_c < 32 || insert_c > 126)
+		exit(-1);
+
 	/*print character*/
 	return (_putchar(insert_c));
 }
