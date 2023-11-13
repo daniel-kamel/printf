@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 		{'d', handle_d},
 		{'i', handle_d}
 	};
-	if (!format)
+	if (!format || strlen(format) <= 0)
 		return (-1);
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
