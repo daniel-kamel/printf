@@ -13,6 +13,9 @@ int handle_b(va_list ap)
 
 	num = va_arg(ap, int);
 
+	if (num < 0)
+		exit(-1);
+
 	itoa(num, string, 2);
 
 	for (i = 0; string[i]; i++)
