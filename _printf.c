@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _printf - prints to stout
- * @format: format string
- * Return: number of printed characters
+ * _printf -	prints to stout
+ * @format:	format string
+ * Return:	number of printed characters
 */
 int _printf(const char *format, ...)
 {
