@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 		{'d', handle_d},
 		{'i', handle_d}
 	};
+
 	if (!format || strlen(format) <= 0)
 		return (-1);
 	va_start(ap, format);
@@ -22,6 +23,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			length += _putchar(format[i]);
+		else if (format[i] == '%' && !format[i + 1])
+			return(-1);
 		else
 		{
 			i++;
