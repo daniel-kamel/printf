@@ -25,6 +25,7 @@ typedef struct specifier
 } spec;
 
 /*Function prototypes*/
+int handle_b(va_list ap);
 int handle_c(va_list ap);
 int handle_s(va_list ap);
 int handle_d(va_list ap);
@@ -33,6 +34,6 @@ int _putchar(char c);
 void tostring(char str[], int num);
 char *itoa(int num, char *str, int base);
 
-#define NUM_SPEC 4
+#define NUM_SPEC 5
 
 #endif

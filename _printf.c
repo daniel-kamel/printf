@@ -13,7 +13,8 @@ int _printf(const char *format, ...)
 		{'c', handle_c},
 		{'s', handle_s},
 		{'d', handle_d},
-		{'i', handle_d}
+		{'i', handle_d},
+		{'b', handle_b}
 	};
 	if (!format || strlen(format) <= 0 || (format[0] == '%' && !format[1]))
 		return (-1);
