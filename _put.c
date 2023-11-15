@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _puts -	uses _putchar on a string 
+ * _puts -	uses _putchar on a string.
  * @str:	the string to print.
  * Return:	nothing.
  */
 int _puts(char *str)
 {
 	char *orig = str;
-	
+
 	while (*str)
 		_putchar(*str++);
 	return (str - orig);

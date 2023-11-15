@@ -29,12 +29,14 @@ int handle_b(va_list ap);
 int handle_c(va_list ap);
 int handle_s(va_list ap);
 int handle_d(va_list ap);
+int handle_p(va_list ap);
+int handle_per(va_list ap);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _puts(char *str);
 void tostring(char str[], int num);
 char *itoa(int num, char *str, int base);
 
-#define NUM_SPEC 5
+#define NUM_SPEC 7
 
 #endif

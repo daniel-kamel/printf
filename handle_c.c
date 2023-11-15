@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * handle_c - handles character specifier in _printf
- * @ap: variable list
- * Return: 1
+ * handle_c -	handles character specifier in _printf.
+ * @ap:		variable list.
+ * Return:	1 (number of characters printed).
 */
 int handle_c(va_list ap)
 {
