@@ -42,7 +42,6 @@ int _printf(const char *format, ...)
 		else
 			return (-1);
 	}
-	_putchar(0);
 	_putchar(-1);
 	va_end(ap);
 	return (length);
