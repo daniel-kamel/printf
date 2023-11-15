@@ -27,7 +27,7 @@ int handle_p(va_list ap)
 
 	str[0] = '0';
 	str[1] = 'x';
-	
+
 	itoa(num, (str + 2), 16);
 
 	return (_puts(str));
